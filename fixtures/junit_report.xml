@@ -1,0 +1,67 @@
+<testsuites name="Mocha Tests">
+	<testsuite name="android.Titanium.UI.Window"
+	tests="19"
+	failures="1"
+	skipped="3"
+	timestamp=""
+	time="6.487">
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".orientationModes LANDSCAPE_RIGHT"
+	 time="0">
+			<skipped/>
+			<system-err><![CDATA[
+[ERROR] :  Surface: getSlotFromBufferLocked: unknown buffer: 0x9296d3c0
+[ERROR] :  Surface: getSlotFromBufferLocked: unknown buffer: 0x9296d3c0
+
+]]></system-err>
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".orientationModes LANDSCAPE_LEFT"
+	 time="0.084">
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".orientationModes PORTRAIT"
+	 time="0.039">
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".safeAreaPadding with extendSafeArea true"
+	 time="0.052">
+			<failure message="expected 0 to be above 0" type="AssertionError">
+				      at Assertion.prop.(anonymous function) (/should.js:1411:20)
+		at Window.&lt;anonymous&gt; (/ti.ui.window.test.js:675:35)
+		at Window.value (ti:/events.js:50:21)
+		at Window.value (ti:/events.js:102:19)
+		</failure>
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".safeAreaPadding with extendSafeArea false"
+	 time="0.051">
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name="TIMOB-26157"
+	 time="0.022">
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name="#applyProperties(Object)"
+	 time="0.006">
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name="window_navigation"
+	 time="0">
+			<skipped/>
+		</testcase>
+		<testcase
+				 classname="android.Titanium.UI.Window.events"
+				 name="postlayout event gets fired"
+				 time="0.042">
+		</testcase>
+	</testsuite>
+</testsuites>
