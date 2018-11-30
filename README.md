@@ -12,6 +12,8 @@ Install:
 
 ```sh
 npm install danger-plugin-junit --save-dev
+# or
+yarn add danger-plugin-junit --dev
 ```
 
 At a glance:
@@ -21,7 +23,7 @@ At a glance:
 import junit from 'danger-plugin-junit'
 
 async function main() {
-	await junit({ reportPath: './build/reports/**/TESTS*.xml' })
+	await junit({ pathToReport: './build/reports/**/TESTS*.xml' })
 }
 
 main()
@@ -32,8 +34,8 @@ main()
 	});
 ```
 
-The default `reportPath` is `'./build/reports/**/TESTS*.xml'`
-The value is a [glob](https://www.npmjs.com/package/glob) path to gather up test results.
+The default `pathToReport` value is `'./build/reports/**/TESTS*.xml'`
+The value is a [glob](https://www.npmjs.com/package/glob) string to gather up test result files.
 
 This plugin will only report test failures and errors. If any tests fail, it will report a single `fail()` message and record a table of the failed tests using `markdown()`.
 
