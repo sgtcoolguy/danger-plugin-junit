@@ -27,15 +27,18 @@ describe("junit()", () => {
   it("Checks test failures were failed", async () => {
     await junit({
       pathToReport: "./fixtures/junit*.xml",
-      showMessageTestSummary: false,
-      showTestFailures: true,
     })
 
     expect(global.fail).toHaveBeenCalledTimes(1)
-    expect(global.fail).toHaveBeenCalledWith('Tests have failed, see below for more information.');
+    expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
     expect(global.markdown).toHaveBeenCalledTimes(1)
     expect(global.markdown).toHaveBeenCalledWith(
-      '### Tests: \n\n| Classname | Name | Time | Error |\n| --- | --- | --- | --- |\n| android.Titanium.UI.Window | .safeAreaPadding with extendSafeArea true | 0.052 | expected 0 to be above 0 |\n'
+      `### Tests:
+
+| Classname | Name | Time | Error |
+| --- | --- | --- | --- |
+| android.Titanium.UI.Window | .safeAreaPadding with extendSafeArea true | 0.052 | expected 0 to be above 0 |
+`
     )
   })
 })
