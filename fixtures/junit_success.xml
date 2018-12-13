@@ -1,0 +1,29 @@
+<testsuites name="Mocha Tests">
+	<testsuite name="android.Titanium.UI.Window"
+	tests="3"
+	failures="0"
+	skipped="0"
+	timestamp=""
+	time="6.487">
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".orientationModes LANDSCAPE_RIGHT"
+	 time="0">
+			<system-err><![CDATA[
+[ERROR] :  Surface: getSlotFromBufferLocked: unknown buffer: 0x9296d3c0
+[ERROR] :  Surface: getSlotFromBufferLocked: unknown buffer: 0x9296d3c0
+
+]]></system-err>
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".orientationModes LANDSCAPE_LEFT"
+	 time="0.084">
+		</testcase>
+		<testcase
+	 classname="android.Titanium.UI.Window"
+	 name=".orientationModes PORTRAIT"
+	 time="0.039">
+		</testcase>
+	</testsuite>
+</testsuites>
