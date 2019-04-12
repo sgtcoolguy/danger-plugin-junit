@@ -17,6 +17,8 @@ interface Attribute {
 
 interface Element {
   attributes: Attribute[]
+  firstChild: Element
+  nodeValue: string
   hasAttribute(name: string): boolean
   getAttribute(name: string): string
   getElementsByTagName(name: string): ElementList
@@ -72,19 +74,43 @@ export default async function junit(options: JUnitReportOptions) {
   }
 }
 
+function gatherErrorDetail(failure: Element): string {
+  let detail = "<pre>"
+  if (failure.hasAttribute("type") && failure.getAttribute("type") !== "") {
+    detail += `${failure.getAttribute("type")}: `
+  }
+  if (failure.hasAttribute("message")) {
+    detail += failure.getAttribute("message")
+  }
+  if (failure.hasAttribute("stack")) {
+    detail += "\n" + failure.getAttribute("stack")
+  }
+  if (failure.hasChildNodes) {
+    // CDATA stack trace
+    detail +=
+      "\n" +
+      failure.firstChild.nodeValue
+        .trim()
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+  }
+  detail += "</pre>"
+  return detail
+}
+
 function reportFailures(failuresAndErrors: Element[]): void {
   fail("Tests have failed, see below for more information.")
-  let testResultsTable: string = "### Tests:\n\n"
+  let testResultsTable: string = "### Tests:\n\n<table>"
   const keys: string[] = Array.from(failuresAndErrors[0].attributes).map((attr: Attribute) => attr.nodeName)
   const attributes: string[] = keys.map(key => {
     return key.substr(0, 1).toUpperCase() + key.substr(1).toLowerCase()
   })
+  // TODO: Force order? Classname, name, time
   attributes.push("Error")
 
   // TODO Include stderr/stdout too?
   // Create the headers
-  testResultsTable += "| " + attributes.join(" | ") + " |\n"
-  testResultsTable += "| " + attributes.map(() => "---").join(" | ") + " |\n"
+  testResultsTable += `<tr><th>${attributes.join("</th><th>")}</th></tr>\n`
 
   // Map out the keys to the tests
   failuresAndErrors.forEach(test => {
@@ -92,17 +118,18 @@ function reportFailures(failuresAndErrors: Element[]): void {
     // push error/failure message too
     const errors = test.getElementsByTagName("error")
     if (errors.length !== 0) {
-      rowValues.push(errors.item(0).getAttribute("message") + errors.item(0).getAttribute("stack"))
+      rowValues.push(gatherErrorDetail(errors.item(0)))
     } else {
       const failures = test.getElementsByTagName("failure")
       if (failures.length !== 0) {
-        rowValues.push(failures.item(0).getAttribute("message") + failures.item(0).getAttribute("stack"))
+        rowValues.push(gatherErrorDetail(failures.item(0)))
       } else {
         rowValues.push("") // This shouldn't ever happen
       }
     }
-    testResultsTable += "| " + rowValues.join(" | ") + " |\n"
+    testResultsTable += `<tr><td>${rowValues.join("</td><td>")}</td></tr>\n`
   })
+  testResultsTable += `</table>\n`
 
   markdown(testResultsTable)
 }
@@ -115,6 +142,7 @@ function reportSummary(suites: Element[]): void {
   }
   // for each test suite, look at:
   // tests="19" failures="1" skipped="3" timestamp="" time="6.487">
+  // FIXME: Sometimes these numbers look "suspect" and may be reporting incorrect numbers versus the actual contents...
   suites.forEach(s => {
     results.count += s.hasAttribute("tests") ? parseInt(s.getAttribute("tests"), 10) : 0
     results.failures += s.hasAttribute("failures") ? parseInt(s.getAttribute("failures"), 10) : 0
@@ -126,10 +154,13 @@ function reportSummary(suites: Element[]): void {
     message(`:x: ${results.failures} tests have failed
 There are ${results.failures} tests failing and ${results.skipped} skipped out of ${results.count} total tests.`)
   } else {
-    message(`:white_check_mark: All tests are passing
-Nice one! All ${results.count} tests are passing.`)
+    let msg = `:white_check_mark: All tests are passing
+Nice one! All ${results.count} tests are passing.`
+    if (results.skipped !== 0) {
+      msg += `\n(There are ${results.skipped} tests skipped)`
+    }
+    message(msg)
   }
-  // TODO: What about when we have none failing, but some skipped?
 }
 
 async function gatherSuites(reportPath: string): Promise<Element[]> {
@@ -141,7 +172,7 @@ async function gatherSuites(reportPath: string): Promise<Element[]> {
   const doc = new DOMParser().parseFromString(contents, "text/xml")
   const suiteRoot =
     doc.documentElement.firstChild.tagName === "testsuites" ? doc.documentElement.firstChild : doc.documentElement
-  return Array.from(suiteRoot.getElementsByTagName("testsuite"))
+  return suiteRoot.tagName === "testsuite" ? [suiteRoot] : Array.from(suiteRoot.getElementsByTagName("testsuite"))
 }
 
 // Report test failures

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`junit() Checks test failures were failed 1`] = `
+"### Tests:
+
+<table><tr><th>Classname</th><th>Name</th><th>Time</th><th>Error</th></tr>
+<tr><td>android.Titanium.UI.Window</td><td>.safeAreaPadding with extendSafeArea true</td><td>0.052</td><td><pre>AssertionError: expected 0 to be above 0
+at Assertion.prop.(anonymous function) (/should.js:1411:20)
+		at Window.&lt;anonymous&gt; (/ti.ui.window.test.js:675:35)
+		at Window.value (ti:/events.js:50:21)
+		at Window.value (ti:/events.js:102:19)</pre></td></tr>
+</table>
+"
+`;
+
+exports[`junit() Combines multiple report files 1`] = `
+"### Tests:
+
+<table><tr><th>Classname</th><th>Name</th><th>Time</th><th>Error</th></tr>
+<tr><td>android.Titanium.UI.Window</td><td>.safeAreaPadding with extendSafeArea true</td><td>0.052</td><td><pre>AssertionError: expected 0 to be above 0
+at Assertion.prop.(anonymous function) (/should.js:1411:20)
+		at Window.&lt;anonymous&gt; (/ti.ui.window.test.js:675:35)
+		at Window.value (ti:/events.js:50:21)
+		at Window.value (ti:/events.js:102:19)</pre></td></tr>
+</table>
+"
+`;
+
+exports[`junit() handles karma junit report 1`] = `
+"### Tests:
+
+<table><tr><th>Name</th><th>Time</th><th>Classname</th><th>Error</th></tr>
+<tr><td>appcelerator.encrypteddatabase can be required</td><td>0.014</td><td>android.appcelerator.encrypteddatabase</td><td><pre>
+TypeError: Cannot set property 'invocationAPIs' of undefined
+error properties: Object({ toJSON: Function })
+    at &lt;Jasmine&gt;
+    at Object.moduleBootstrap [as bootstrap] (appcelerator.encrypteddatabootstrap.js:20:45)
+    at Module.loadExternalModule (ti:/module.js:201:31)
+    at Module.loadCoreModule (ti:/module.js:331:16)
+    at Module.require (ti:/module.js:246:16)
+    at require (ti:/module.js:570:15)
+    at &lt;Jasmine&gt;</pre></td></tr>
+</table>
+"
+`;

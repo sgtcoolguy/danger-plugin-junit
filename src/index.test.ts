@@ -53,14 +53,7 @@ describe("junit()", () => {
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
     expect(global.markdown).toHaveBeenCalledTimes(1)
-    expect(global.markdown).toHaveBeenCalledWith(
-      `### Tests:
-
-| Classname | Name | Time | Error |
-| --- | --- | --- | --- |
-| android.Titanium.UI.Window | .safeAreaPadding with extendSafeArea true | 0.052 | expected 0 to be above 0 |
-`
-    )
+    expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
   })
 
   it("Combines multiple report files", async () => {
@@ -75,13 +68,21 @@ describe("junit()", () => {
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
     expect(global.markdown).toHaveBeenCalledTimes(1)
-    expect(global.markdown).toHaveBeenCalledWith(
-      `### Tests:
+    expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
+  })
 
-| Classname | Name | Time | Error |
-| --- | --- | --- | --- |
-| android.Titanium.UI.Window | .safeAreaPadding with extendSafeArea true | 0.052 | expected 0 to be above 0 |
-`
+  it("handles karma junit report", async () => {
+    await junit({
+      pathToReport: "./fixtures/TESTS-*.xml",
+    })
+
+    expect(global.message).toHaveBeenCalledTimes(1)
+    expect(global.message).toHaveBeenCalledWith(
+      ":x: 2 tests have failed\nThere are 2 tests failing and 0 skipped out of 2 total tests."
     )
+    expect(global.fail).toHaveBeenCalledTimes(1)
+    expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
+    expect(global.markdown).toHaveBeenCalledTimes(1)
+    expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
   })
 })

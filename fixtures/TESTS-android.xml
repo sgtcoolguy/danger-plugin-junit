@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<testsuite name="android" package="" timestamp="2019-04-11T15:27:24" id="0" hostname="ITEM-AXW52916" tests="2" errors="1" failures="1" time="0.014">
+  <properties>
+    <property name="browser.fullName" value="android"/>
+  </properties>
+  <testcase name="appcelerator.encrypteddatabase can be required" time="0.014" classname="android.appcelerator.encrypteddatabase">
+    <failure type="">TypeError: Cannot set property 'invocationAPIs' of undefined
+error properties: Object({ toJSON: Function })
+    at &lt;Jasmine&gt;
+    at Object.moduleBootstrap [as bootstrap] (appcelerator.encrypteddatabootstrap.js:20:45)
+    at Module.loadExternalModule (ti:/module.js:201:31)
+    at Module.loadCoreModule (ti:/module.js:331:16)
+    at Module.require (ti:/module.js:246:16)
+    at require (ti:/module.js:570:15)
+    at &lt;Jasmine&gt;
+</failure>
+  </testcase>
+  <testcase name="appcelerator.encrypteddatabase db read/write integer boundaries" time="0" classname="android.appcelerator.encrypteddatabase">
+    <skipped/>
+  </testcase>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
