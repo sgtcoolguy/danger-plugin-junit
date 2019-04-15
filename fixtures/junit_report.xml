@@ -1,0 +1,7 @@
+<testsuites name="Mocha Tests">
+  <testsuite name="adb with an emulator running" tests="4" errors="0" failures="1" skipped="0" timestamp="2019-04-15T09:11:55" time="11.373">
+    <testcase classname="adb with an emulator running" name="#pull()" time="0">
+      <failure message="ENOENT: no such file or directory, unlink &apos;/Users/eharris/Documents/git/node-titanium-sdk/tests/build.prop&apos;"></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

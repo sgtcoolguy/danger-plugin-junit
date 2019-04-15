@@ -22,6 +22,16 @@ at Assertion.prop.(anonymous function) (/should.js:1411:20)
 		at Window.&lt;anonymous&gt; (/ti.ui.window.test.js:675:35)
 		at Window.value (ti:/events.js:50:21)
 		at Window.value (ti:/events.js:102:19)</pre></td></tr>
+<tr><td>adb with an emulator running</td><td>#pull()</td><td>0</td><td><pre>ENOENT: no such file or directory, unlink '/Users/eharris/Documents/git/node-titanium-sdk/tests/build.prop'</pre></td></tr>
+</table>
+"
+`;
+
+exports[`junit() Handles failures 1`] = `
+"### Tests:
+
+<table><tr><th>Classname</th><th>Name</th><th>Time</th><th>Error</th></tr>
+<tr><td>adb with an emulator running</td><td>#pull()</td><td>0</td><td><pre>ENOENT: no such file or directory, unlink '/Users/eharris/Documents/git/node-titanium-sdk/tests/build.prop'</pre></td></tr>
 </table>
 "
 `;

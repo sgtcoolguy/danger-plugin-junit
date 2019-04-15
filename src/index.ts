@@ -85,7 +85,7 @@ function gatherErrorDetail(failure: Element): string {
   if (failure.hasAttribute("stack")) {
     detail += "\n" + failure.getAttribute("stack")
   }
-  if (failure.hasChildNodes) {
+  if (failure.hasChildNodes()) {
     // CDATA stack trace
     detail +=
       "\n" +

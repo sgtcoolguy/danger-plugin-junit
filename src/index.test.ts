@@ -63,7 +63,7 @@ describe("junit()", () => {
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 22 total tests."
+      ":x: 2 tests have failed\nThere are 2 tests failing and 3 skipped out of 26 total tests."
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
@@ -79,6 +79,21 @@ describe("junit()", () => {
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
       ":x: 2 tests have failed\nThere are 2 tests failing and 0 skipped out of 2 total tests."
+    )
+    expect(global.fail).toHaveBeenCalledTimes(1)
+    expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
+    expect(global.markdown).toHaveBeenCalledTimes(1)
+    expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
+  })
+
+  it("Handles failures from mocha-jenkins-reporter", async () => {
+    await junit({
+      pathToReport: "./fixtures/junit_report.xml",
+    })
+
+    expect(global.message).toHaveBeenCalledTimes(1)
+    expect(global.message).toHaveBeenCalledWith(
+      ":x: 1 tests have failed\nThere are 1 tests failing and 0 skipped out of 4 total tests."
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
