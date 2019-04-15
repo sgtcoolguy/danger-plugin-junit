@@ -7,3 +7,14 @@ node_modules/
 src/
 types/*
 !types/index.d.ts
+
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+README.md
+junit_results.png
+
+.vscode/
+
+fixtures/
+tslint.json
+tsconfig.json
