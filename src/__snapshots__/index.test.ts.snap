@@ -27,7 +27,7 @@ at Assertion.prop.(anonymous function) (/should.js:1411:20)
 "
 `;
 
-exports[`junit() Handles failures 1`] = `
+exports[`junit() Handles failures from mocha-jenkins-reporter 1`] = `
 "### Tests:
 
 <table><tr><th>Classname</th><th>Name</th><th>Time</th><th>Error</th></tr>
