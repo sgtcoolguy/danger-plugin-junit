@@ -45,7 +45,7 @@
     "@types/node": "^10.14.4",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.0.0",
-    "danger": "2.x",
+    "danger": "^7.1.2",
     "esdoc": "^1.1.0",
     "husky": "^0.13.3",
     "jest": "^24.7.1",
