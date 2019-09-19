@@ -147,7 +147,7 @@ function reportSummary(suites: Element[]): void {
     results.count += s.hasAttribute("tests") ? parseInt(s.getAttribute("tests"), 10) : 0
     results.failures += s.hasAttribute("failures") ? parseInt(s.getAttribute("failures"), 10) : 0
     results.failures += s.hasAttribute("errors") ? parseInt(s.getAttribute("errors"), 10) : 0
-    results.skipped += s.hasAttribute("skipped") ? parseInt(s.getAttribute("skipped"), 10) : 0
+    results.skipped += s.hasAttribute("skipped") ? parseInt(s.getAttribute("skipped"), 10) : gatherSkipped(s)
   })
 
   if (results.failures !== 0) {
@@ -155,9 +155,9 @@ function reportSummary(suites: Element[]): void {
 There are ${results.failures} tests failing and ${results.skipped} skipped out of ${results.count} total tests.`)
   } else {
     let msg = `:white_check_mark: All tests are passing
-Nice one! All ${results.count} tests are passing.`
+Nice one! All ${results.count - results.skipped} tests are passing.`
     if (results.skipped !== 0) {
-      msg += `\n(There are ${results.skipped} tests skipped)`
+      msg += `\n(There are ${results.skipped} skipped tests not included in that total)`
     }
     message(msg)
   }
@@ -194,4 +194,11 @@ function gatherFailedTestcases(suites: Element[]): Element[] {
       (test.getElementsByTagName("failure").length > 0 || test.getElementsByTagName("error").length > 0)
     )
   })
+}
+
+function gatherSkipped(suite: Element): number {
+  const testcases: Element[] = Array.from(suite.getElementsByTagName("testcase"))
+  return testcases.filter(test => {
+    return test.hasChildNodes() && test.getElementsByTagName("skipped").length > 0
+  }).length
 }
