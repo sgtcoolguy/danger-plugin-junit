@@ -73,12 +73,12 @@ describe("junit()", () => {
 
   it("handles karma junit report", async () => {
     await junit({
-      pathToReport: "./fixtures/TESTS-*.xml",
+      pathToReport: "./fixtures/TESTS-android.xml",
     })
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 2 tests have failed\nThere are 2 tests failing and 0 skipped out of 2 total tests."
+      ":x: 1 tests have failed\nThere are 1 tests failing and 1 skipped out of 2 total tests."
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
@@ -99,5 +99,20 @@ describe("junit()", () => {
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
     expect(global.markdown).toHaveBeenCalledTimes(1)
     expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
+  })
+
+  it("Handles skipped from karma-titanium-launcher", async () => {
+    await junit({
+      pathToReport: "./fixtures/TESTS-ios.xml",
+    })
+
+    expect(global.message).toHaveBeenCalledTimes(1)
+    expect(global.message).toHaveBeenCalledWith(
+      `:white_check_mark: All tests are passing
+Nice one! All 178 tests are passing.
+(There are 8 skipped tests not included in that total)`
+    )
+    expect(global.fail).toHaveBeenCalledTimes(0)
+    expect(global.markdown).toHaveBeenCalledTimes(0)
   })
 })

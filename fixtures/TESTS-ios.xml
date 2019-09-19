@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<testsuite name="ios" package="" timestamp="2019-09-19T16:04:09" id="0" hostname="ITEM-AXW52916" tests="186" errors="0" failures="0" time="0.195">
+  <properties>
+    <property name="browser.fullName" value="ios"/>
+  </properties>
+  <testcase name="ti.coremotion.Accelerometer can be created" time="0.002" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer .apiName" time="0.001" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #setAccelerometerUpdateInterval() is a Function" time="0.002" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #setAccelerometerUpdateInterval() handles integer argument" time="0.001" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #setAccelerometerUpdateInterval() throws with string argument" time="0.01" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #setAccelerometerUpdateInterval() throws with no arguments" time="0.003" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #startAccelerometerUpdates() is a Function" time="0.001" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #startAccelerometerUpdates() handles Function argument" time="0" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #startAccelerometerUpdates() throws with string argument" time="0.002" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #startAccelerometerUpdates() doees not throw with no arguments" time="0" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #stopAccelerometerUpdates() is a Function" time="0.002" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #stopAccelerometerUpdates() does not throw when invoked with no arguments" time="0.001" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #isAccelerometerActive() is a Function" time="0.002" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #isAccelerometerActive() returns Boolean" time="0.001" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #isAccelerometerAvailable() is a Function" time="0" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #isAccelerometerAvailable() returns Boolean" time="0.001" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #getAccelerometerData() is a Function" time="0" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.Accelerometer methods #getAccelerometerData() returns Object" time="0.002" classname="ios.ti.coremotion.Accelerometer"/>
+  <testcase name="ti.coremotion.DeviceMotion can be created" time="0.002" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion .apiName" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setShowsDeviceMovementDisplay() is a Function" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setShowsDeviceMovementDisplay() accepts boolean argument" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setShowsDeviceMovementDisplay() throws with string argument" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setShowsDeviceMovementDisplay() throws with no arguments" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setDeviceMotionUpdateInterval() is a Function" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setDeviceMotionUpdateInterval() handles integer argument" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setDeviceMotionUpdateInterval() throws with string argument" time="0.025" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #setDeviceMotionUpdateInterval() throws with no arguments" time="0.002" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdatesUsingReferenceFrame() is a Function" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdatesUsingReferenceFrame() handles object and callback arguments" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdatesUsingReferenceFrame() handles object argument with no callback" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdatesUsingReferenceFrame() throws is missing object argument" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdates() is a Function" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdates() handles Function argument" time="0.002" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdates() throws with string argument" time="0.003" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #startDeviceMotionUpdates() doees not throw with no arguments" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #stopDeviceMotionUpdates() is a Function" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #stopDeviceMotionUpdates() does not throw when invoked with no arguments" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #getAttitudeReferenceFrame() is a Function" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #getAttitudeReferenceFrame() accepts no arguments" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #getAttitudeReferenceFrame() returns numeric constant" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #availableAttitudeReferenceFrames() is a Function" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #availableAttitudeReferenceFrames() accepts no arguments" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #availableAttitudeReferenceFrames() returns numeric constant" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #isDeviceMotionActive() is a Function" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #isDeviceMotionActive() returns Boolean" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #isDeviceMotionAvailable() is a Function" time="0.002" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #isDeviceMotionAvailable() returns Boolean" time="0" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #getDeviceMotion() is a Function" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.DeviceMotion methods #getDeviceMotion() returns Object" time="0.001" classname="ios.ti.coremotion.DeviceMotion"/>
+  <testcase name="ti.coremotion.Gyroscope can be created" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope .apiName" time="0.001" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #setGyroUpdateInterval() is a Function" time="0.001" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #setGyroUpdateInterval() handles integer argument" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #setGyroUpdateInterval() throws with string argument" time="0.001" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #setGyroUpdateInterval() throws with no arguments" time="0.002" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #startGyroUpdates() is a Function" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #startGyroUpdates() handles Function argument" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #startGyroUpdates() throws with string argument" time="0.001" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #startGyroUpdates() doees not throw with no arguments" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #stopGyroUpdates() is a Function" time="0.002" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #stopGyroUpdates() does not throw when invoked with no arguments" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #isGyroActive() is a Function" time="0.002" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #isGyroActive() returns Boolean" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #isGyroAvailable() is a Function" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #isGyroAvailable() returns Boolean" time="0.001" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #getGyroData() is a Function" time="0" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Gyroscope methods #getGyroData() returns Object" time="0.001" classname="ios.ti.coremotion.Gyroscope"/>
+  <testcase name="ti.coremotion.Magnetometer can be created" time="0.002" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer .apiName" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #setMagnetometerUpdateInterval() is a Function" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #setMagnetometerUpdateInterval() handles integer argument" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #setMagnetometerUpdateInterval() throws with string argument" time="0.001" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #setMagnetometerUpdateInterval() throws with no arguments" time="0.002" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #startMagnetometerUpdates() is a Function" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #startMagnetometerUpdates() handles Function argument" time="0.001" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #startMagnetometerUpdates() throws with string argument" time="0.002" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #startMagnetometerUpdates() doees not throw with no arguments" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #stopMagnetometerUpdates() is a Function" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #stopMagnetometerUpdates() does not throw when invoked with no arguments" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #isMagnetometerActive() is a Function" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #isMagnetometerActive() returns Boolean" time="0.002" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #isMagnetometerAvailable() is a Function" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #isMagnetometerAvailable() returns Boolean" time="0.001" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #getMagnetometerData() is a Function" time="0.001" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion.Magnetometer methods #getMagnetometerData() returns Object" time="0" classname="ios.ti.coremotion.Magnetometer"/>
+  <testcase name="ti.coremotion can be required" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module .apiName" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_NULL" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_DEVICE_REQUIRES_MOVEMENT" time="0.002" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_TRUE_NORTH_NOT_AVAILABLE" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_UNKNOWN" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_INVALID_PARAMETER" time="0.003" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_MOTION_ACTIVITY_NOT_AVAILABLE" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_MOTION_ACTIVITY_NOT_AUTHORIZED" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_MOTION_ACTIVITY_NOT_ENTITLED" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ERROR_* ERROR_INVALID_PARAMETER" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ATTITUDE_REFERENCE_FRAME_X_* ATTITUDE_REFERENCE_FRAME_X_ARBITRARY_Z_VERTICAL" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ATTITUDE_REFERENCE_FRAME_X_* ATTITUDE_REFERENCE_FRAME_X_ARBITRARY_CORRECTED_Z_VERTICAL" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ATTITUDE_REFERENCE_FRAME_X_* ATTITUDE_REFERENCE_FRAME_X_MAGNETIC_NORTH_Z_VERTICAL" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants ATTITUDE_REFERENCE_FRAME_X_* ATTITUDE_REFERENCE_FRAME_X_TRUE_NORTH_Z_VERTICAL" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MAGNETIC_FIELD_CALIBRATION_ACCURACY_* MAGNETIC_FIELD_CALIBRATION_ACCURACY_UNCALIBRATED" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MAGNETIC_FIELD_CALIBRATION_ACCURACY_* MAGNETIC_FIELD_CALIBRATION_ACCURACY_LOW" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MAGNETIC_FIELD_CALIBRATION_ACCURACY_* MAGNETIC_FIELD_CALIBRATION_ACCURACY_MEDIUM" time="0.001" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MAGNETIC_FIELD_CALIBRATION_ACCURACY_* MAGNETIC_FIELD_CALIBRATION_ACCURACY_HIGH" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MOTION_ACTIVITY_CONFIDENCE_* MOTION_ACTIVITY_CONFIDENCE_LOW" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MOTION_ACTIVITY_CONFIDENCE_* MOTION_ACTIVITY_CONFIDENCE_MEDIUM" time="0.002" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion module constants MOTION_ACTIVITY_CONFIDENCE_* MOTION_ACTIVITY_CONFIDENCE_HIGH" time="0" classname="ios.ti.coremotion"/>
+  <testcase name="ti.coremotion.MotionActivity can be created" time="0" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity .apiName" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #isActivityAvailable() is a Function" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #isActivityAvailable() returns Boolean" time="0.008" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #startActivityUpdates() is a Function" time="0" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #startActivityUpdates() handles Function argument" time="0" classname="ios.ti.coremotion.MotionActivity">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.MotionActivity methods #startActivityUpdates() throws with string argument" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #startActivityUpdates() throws with no arguments" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #stopActivityUpdates() is a Function" time="0" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #stopActivityUpdates() does not throw when invoked with no arguments" time="0" classname="ios.ti.coremotion.MotionActivity">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() is a Function" time="0" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() accepts object and callback arguments" time="0" classname="ios.ti.coremotion.MotionActivity">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if first argument is a string" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws with no arguments" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if object argument has no start property" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if object argument has no end property" time="0.002" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if callback argument is missing" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if object argument has start property that is not a Date" time="0.002" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if object argument has end property that is not a Date" time="0.003" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.MotionActivity methods #queryActivity() throws if callback argument is not a Function" time="0.001" classname="ios.ti.coremotion.MotionActivity"/>
+  <testcase name="ti.coremotion.Pedometer can be created" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer .apiName" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isSupported() is a Function" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isSupported() returns Boolean" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isCadenceAvailable() is a Function" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isCadenceAvailable() returns Boolean" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isDistanceAvailable() is a Function" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isDistanceAvailable() returns Boolean" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isPaceAvailable() is a Function" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isPaceAvailable() returns Boolean" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isFloorCountingAvailable() is a Function" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isFloorCountingAvailable() returns Boolean" time="0.002" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isStepCountingAvailable() is a Function" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #isStepCountingAvailable() returns Boolean" time="0.003" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() is a Function" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() accepts object and callback arguments" time="0" classname="ios.ti.coremotion.Pedometer">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() throws with no arguments" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() throws with string argument" time="0.002" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() throws with integer argument" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() throws if object argument has no start property" time="0.002" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() throws if object argument has stat property that is not a Date" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #startPedometerUpdates() throws if callback argument is not a Function" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #stopPedometerUpdates() is a Function" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #stopPedometerUpdates() accepts no arguments" time="0" classname="ios.ti.coremotion.Pedometer">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() is a Function" time="0" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() accepts object and callback arguments" time="0" classname="ios.ti.coremotion.Pedometer">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if first argument is a string" time="0.002" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws with no arguments" time="0.002" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if object argument has no start property" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if object argument has no end property" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if callback argument is missing" time="0.003" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if object argument has start property that is not a Date" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if object argument has end property that is not a Date" time="0.001" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.Pedometer methods #queryPedometerData() throws if callback argument is not a Function" time="0.002" classname="ios.ti.coremotion.Pedometer"/>
+  <testcase name="ti.coremotion.StepCounter can be created" time="0" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter .apiName" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #isStepCountingAvailable() is a Function" time="0" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #isStepCountingAvailable() returns Boolean" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() is a Function" time="0" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() accepts object and callback arguments" time="0" classname="ios.ti.coremotion.StepCounter">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() throws with no arguments" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() throws with string argument" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() throws with integer argument" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() throws if object argument has no stepCounts property" time="0.003" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() throws if object argument has stepCounts property that is not a number" time="0.002" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #startStepCountingUpdates() throws if callback argument is not a Function" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #stopStepCountingUpdates() is a Function" time="0" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #stopStepCountingUpdates() accepts no arguments" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() is a Function" time="0" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() accepts object and callback arguments" time="0" classname="ios.ti.coremotion.StepCounter">
+    <skipped/>
+  </testcase>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if first argument is a string" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws with no arguments" time="0.002" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if object argument has no start property" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if object argument has no end property" time="0.002" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if callback argument is missing" time="0.002" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if object argument has start property that is not a Date" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if object argument has end property that is not a Date" time="0.002" classname="ios.ti.coremotion.StepCounter"/>
+  <testcase name="ti.coremotion.StepCounter methods #queryStepCount() throws if callback argument is not a Function" time="0.001" classname="ios.ti.coremotion.StepCounter"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

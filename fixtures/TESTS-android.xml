@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testsuite name="android" package="" timestamp="2019-04-11T15:27:24" id="0" hostname="ITEM-AXW52916" tests="2" errors="1" failures="1" time="0.014">
+<testsuite name="android" package="" timestamp="2019-04-11T15:27:24" id="0" hostname="ITEM-AXW52916" tests="2" errors="0" failures="1" time="0.014">
   <properties>
     <property name="browser.fullName" value="android"/>
   </properties>
