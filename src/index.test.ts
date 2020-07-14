@@ -24,7 +24,7 @@ describe("junit()", () => {
     expect(global.markdown).not.toHaveBeenCalled()
     expect(global.warn).toHaveBeenCalledTimes(1)
     expect(global.warn).toHaveBeenCalledWith(
-      ":mag: Can't find junit reports at `./build/reports/**/TESTS*.xml`, skipping generating JUnit Report."
+      ":mag: Can't find junit reports at `./build/reports/**/TESTS*.xml`, skipping generating JUnit Report.",
     )
   })
 
@@ -35,7 +35,7 @@ describe("junit()", () => {
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":white_check_mark: All tests are passing\nNice one! All 3 tests are passing."
+      ":white_check_mark: All tests are passing\nNice one! All 3 tests are passing.",
     )
     expect(global.fail).toHaveBeenCalledTimes(0)
     expect(global.markdown).toHaveBeenCalledTimes(0)
@@ -48,7 +48,7 @@ describe("junit()", () => {
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 19 total tests."
+      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 19 total tests.",
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
@@ -63,7 +63,7 @@ describe("junit()", () => {
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 2 tests have failed\nThere are 2 tests failing and 3 skipped out of 26 total tests."
+      ":x: 2 tests have failed\nThere are 2 tests failing and 3 skipped out of 26 total tests.",
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
@@ -78,7 +78,7 @@ describe("junit()", () => {
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 1 tests have failed\nThere are 1 tests failing and 1 skipped out of 2 total tests."
+      ":x: 1 tests have failed\nThere are 1 tests failing and 1 skipped out of 2 total tests.",
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
@@ -93,7 +93,7 @@ describe("junit()", () => {
 
     expect(global.message).toHaveBeenCalledTimes(1)
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 1 tests have failed\nThere are 1 tests failing and 0 skipped out of 4 total tests."
+      ":x: 1 tests have failed\nThere are 1 tests failing and 0 skipped out of 4 total tests.",
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("Tests have failed, see below for more information.")
@@ -110,7 +110,7 @@ describe("junit()", () => {
     expect(global.message).toHaveBeenCalledWith(
       `:white_check_mark: All tests are passing
 Nice one! All 178 tests are passing.
-(There are 8 skipped tests not included in that total)`
+(There are 8 skipped tests not included in that total)`,
     )
     expect(global.fail).toHaveBeenCalledTimes(0)
     expect(global.markdown).toHaveBeenCalledTimes(0)
@@ -123,7 +123,7 @@ Nice one! All 178 tests are passing.
     })
 
     expect(global.message).toHaveBeenCalledWith(
-      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 19 total tests."
+      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 19 total tests.",
     )
     expect(global.fail).toHaveBeenCalledTimes(1)
     expect(global.fail).toHaveBeenCalledWith("My awesome tests have failed, see below for more information.")
