@@ -22,9 +22,7 @@
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "precommit": "lint-staged",
     "commit": "git-cz",
-    "commitmsg": "validate-commit-msg",
     "build": "tsc",
     "test": "jest",
     "predocs": "rm -rf docs/",
@@ -66,8 +64,7 @@
   "lint-staged": {
     "*.@(ts|tsx)": [
       "tslint --fix",
-      "npm run prettier-write --",
-      "git add"
+      "npm run prettier-write --"
     ]
   },
   "jest": {
@@ -89,5 +86,11 @@
     "fs-extra": "^9.0.1",
     "glob": "^7.1.6",
     "xmldom": "^0.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "lint-staged"
+    }
   }
 }
