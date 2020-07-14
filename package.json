@@ -39,6 +39,8 @@
     "node": ">=4.0.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@types/jest": "^26.0.4",
     "@types/node": "^14.0.23",
     "commitizen": "^4.1.2",
@@ -94,7 +96,9 @@
     }
   },
   "release": {
-    "branches": [ "master" ],
+    "branches": [
+      "master"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
