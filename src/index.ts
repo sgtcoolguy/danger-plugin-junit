@@ -40,6 +40,10 @@ interface JUnitReportOptions {
    * Whether the test summary message will be reported using danger's `message()`. Defaults to true.
    */
   showMessageTestSummary?: boolean
+  /**
+   * Message to show at the top of the test results table. Defaults to "Tests"
+   */
+  name?: string
 }
 
 /**
@@ -50,6 +54,8 @@ export default async function junit(options: JUnitReportOptions) {
     options.pathToReport !== undefined ? options.pathToReport! : "./build/reports/**/TESTS*.xml"
   const shouldShowMessageTestSummary: boolean =
     options.showMessageTestSummary !== undefined ? options.showMessageTestSummary! : true
+
+  const name = options.name ? options.name : "Tests"
 
   // Use glob to find xml reports!
   const matches: string[] = await promisify(glob)(currentPath)
@@ -70,7 +76,7 @@ export default async function junit(options: JUnitReportOptions) {
   // Give details on failed tests
   const failuresAndErrors: Element[] = gatherFailedTestcases(suites)
   if (failuresAndErrors.length !== 0) {
-    reportFailures(failuresAndErrors)
+    reportFailures(failuresAndErrors, name)
   }
 }
 
@@ -98,9 +104,9 @@ function gatherErrorDetail(failure: Element): string {
   return detail
 }
 
-function reportFailures(failuresAndErrors: Element[]): void {
-  fail("Tests have failed, see below for more information.")
-  let testResultsTable: string = "### Tests:\n\n<table>"
+function reportFailures(failuresAndErrors: Element[], name: string): void {
+  fail(`${name} have failed, see below for more information.`)
+  let testResultsTable: string = `### ${name}:\n\n<table>`
   const keys: string[] = Array.from(failuresAndErrors[0].attributes).map((attr: Attribute) => attr.nodeName)
   const attributes: string[] = keys.map(key => {
     return key.substr(0, 1).toUpperCase() + key.substr(1).toLowerCase()

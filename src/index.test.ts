@@ -115,4 +115,19 @@ Nice one! All 178 tests are passing.
     expect(global.fail).toHaveBeenCalledTimes(0)
     expect(global.markdown).toHaveBeenCalledTimes(0)
   })
+
+  it("allows setting a custom header", async () => {
+    await junit({
+      pathToReport: "./fixtures/junit_failures.xml",
+      name: "My awesome tests",
+    })
+
+    expect(global.message).toHaveBeenCalledWith(
+      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 19 total tests."
+    )
+    expect(global.fail).toHaveBeenCalledTimes(1)
+    expect(global.fail).toHaveBeenCalledWith("My awesome tests have failed, see below for more information.")
+    expect(global.markdown).toHaveBeenCalledTimes(1)
+    expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
+  })
 })
