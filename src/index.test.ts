@@ -134,7 +134,7 @@ Nice one! All 178 tests are passing.
   it("allows reporting failures as warnings not errors", async () => {
     await junit({
       pathToReport: "./fixtures/junit_failures.xml",
-      onlyWarn: true
+      onlyWarn: true,
     })
 
     expect(global.message).toHaveBeenCalledWith(
