@@ -36,6 +36,19 @@ exports[`junit() Handles failures from mocha-jenkins-reporter 1`] = `
 "
 `;
 
+exports[`junit() allows reporting failures as warnings not errors 1`] = `
+"### Tests:
+
+<table><tr><th>Classname</th><th>Name</th><th>Time</th><th>Error</th></tr>
+<tr><td>android.Titanium.UI.Window</td><td>.safeAreaPadding with extendSafeArea true</td><td>0.052</td><td><pre>AssertionError: expected 0 to be above 0
+at Assertion.prop.(anonymous function) (/should.js:1411:20)
+		at Window.&lt;anonymous&gt; (/ti.ui.window.test.js:675:35)
+		at Window.value (ti:/events.js:50:21)
+		at Window.value (ti:/events.js:102:19)</pre></td></tr>
+</table>
+"
+`;
+
 exports[`junit() allows setting a custom header 1`] = `
 "### My awesome tests:
 
