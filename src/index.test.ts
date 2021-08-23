@@ -130,4 +130,20 @@ Nice one! All 178 tests are passing.
     expect(global.markdown).toHaveBeenCalledTimes(1)
     expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
   })
+
+  it("allows reporting failures as warnings not errors", async () => {
+    await junit({
+      pathToReport: "./fixtures/junit_failures.xml",
+      onlyWarn: true
+    })
+
+    expect(global.message).toHaveBeenCalledWith(
+      ":x: 1 tests have failed\nThere are 1 tests failing and 3 skipped out of 19 total tests.",
+    )
+    expect(global.fail).toHaveBeenCalledTimes(0)
+    expect(global.warn).toHaveBeenCalledTimes(1)
+    expect(global.warn).toHaveBeenCalledWith("Tests have failed, see below for more information.")
+    expect(global.markdown).toHaveBeenCalledTimes(1)
+    expect(global.markdown.mock.calls[0][0]).toMatchSnapshot()
+  })
 })

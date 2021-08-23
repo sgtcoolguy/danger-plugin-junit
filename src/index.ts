@@ -44,6 +44,11 @@ interface JUnitReportOptions {
    * Message to show at the top of the test results table. Defaults to "Tests"
    */
   name?: string
+
+  /**
+   * If there are test failures, call warn not fail
+   */
+  onlyWarn?: boolean
 }
 
 /**
@@ -76,7 +81,7 @@ export default async function junit(options: JUnitReportOptions) {
   // Give details on failed tests
   const failuresAndErrors: Element[] = gatherFailedTestcases(suites)
   if (failuresAndErrors.length !== 0) {
-    reportFailures(failuresAndErrors, name)
+    reportFailures(failuresAndErrors, name, options.onlyWarn)
   }
 }
 
@@ -104,8 +109,9 @@ function gatherErrorDetail(failure: Element): string {
   return detail
 }
 
-function reportFailures(failuresAndErrors: Element[], name: string): void {
-  fail(`${name} have failed, see below for more information.`)
+function reportFailures(failuresAndErrors: Element[], name: string, onlyWarn?: boolean): void {
+
+  onlyWarn ? warn(`${name} have failed, see below for more information.`) :  fail(`${name} have failed, see below for more information.`)
   let testResultsTable: string = `### ${name}:\n\n<table>`
   const keys: string[] = Array.from(failuresAndErrors[0].attributes).map((attr: Attribute) => attr.nodeName)
   const attributes: string[] = keys.map(key => {
