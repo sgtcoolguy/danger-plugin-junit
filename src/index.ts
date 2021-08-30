@@ -1,7 +1,7 @@
 import * as fs from "fs-extra"
 import * as glob from "glob"
 import { inspect, promisify } from "util"
-import { DOMParser } from "xmldom"
+import { DOMParser } from "@xmldom/xmldom"
 
 // Provides dev-time type structures for  `danger` - doesn't affect runtime.
 import { DangerDSLType } from "../node_modules/danger/distribution/dsl/DangerDSL"
@@ -71,7 +71,7 @@ export default async function junit(options: JUnitReportOptions) {
 
   // Gather all the suites up
   const allSuites = await Promise.all(matches.map(m => gatherSuites(m)))
-  const suites: Element[] = allSuites.reduce((acc, val) => acc.concat(val), [])
+  const suites: globalThis.Element[] = allSuites.reduce((acc, val) => acc.concat(val), [])
 
   // Give a summary message
   if (shouldShowMessageTestSummary) {
@@ -79,13 +79,13 @@ export default async function junit(options: JUnitReportOptions) {
   }
 
   // Give details on failed tests
-  const failuresAndErrors: Element[] = gatherFailedTestcases(suites)
+  const failuresAndErrors: globalThis.Element[] = gatherFailedTestcases(suites)
   if (failuresAndErrors.length !== 0) {
     reportFailures(failuresAndErrors, name, options.onlyWarn)
   }
 }
 
-function gatherErrorDetail(failure: Element): string {
+function gatherErrorDetail(failure: globalThis.Element): string {
   let detail = "<pre>"
   if (failure.hasAttribute("type") && failure.getAttribute("type") !== "") {
     detail += `${failure.getAttribute("type")}: `
@@ -100,7 +100,7 @@ function gatherErrorDetail(failure: Element): string {
     // CDATA stack trace
     detail +=
       "\n" +
-      failure.firstChild.nodeValue
+      failure.firstChild!.nodeValue!
         .trim()
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
@@ -109,7 +109,7 @@ function gatherErrorDetail(failure: Element): string {
   return detail
 }
 
-function reportFailures(failuresAndErrors: Element[], name: string, onlyWarn?: boolean): void {
+function reportFailures(failuresAndErrors: globalThis.Element[], name: string, onlyWarn?: boolean): void {
 
   onlyWarn ? warn(`${name} have failed, see below for more information.`) :  fail(`${name} have failed, see below for more information.`)
   let testResultsTable: string = `### ${name}:\n\n<table>`
@@ -130,11 +130,11 @@ function reportFailures(failuresAndErrors: Element[], name: string, onlyWarn?: b
     // push error/failure message too
     const errors = test.getElementsByTagName("error")
     if (errors.length !== 0) {
-      rowValues.push(gatherErrorDetail(errors.item(0)))
+      rowValues.push(gatherErrorDetail(errors.item(0)!))
     } else {
       const failures = test.getElementsByTagName("failure")
       if (failures.length !== 0) {
-        rowValues.push(gatherErrorDetail(failures.item(0)))
+        rowValues.push(gatherErrorDetail(failures.item(0)!))
       } else {
         rowValues.push("") // This shouldn't ever happen
       }
@@ -146,7 +146,7 @@ function reportFailures(failuresAndErrors: Element[], name: string, onlyWarn?: b
   markdown(testResultsTable)
 }
 
-function reportSummary(suites: Element[]): void {
+function reportSummary(suites: globalThis.Element[]): void {
   const results = {
     count: 0,
     failures: 0,
@@ -156,10 +156,10 @@ function reportSummary(suites: Element[]): void {
   // tests="19" failures="1" skipped="3" timestamp="" time="6.487">
   // FIXME: Sometimes these numbers look "suspect" and may be reporting incorrect numbers versus the actual contents...
   suites.forEach(s => {
-    results.count += s.hasAttribute("tests") ? parseInt(s.getAttribute("tests"), 10) : 0
-    results.failures += s.hasAttribute("failures") ? parseInt(s.getAttribute("failures"), 10) : 0
-    results.failures += s.hasAttribute("errors") ? parseInt(s.getAttribute("errors"), 10) : 0
-    results.skipped += s.hasAttribute("skipped") ? parseInt(s.getAttribute("skipped"), 10) : gatherSkipped(s)
+    results.count += s.hasAttribute("tests") ? parseInt(s.getAttribute("tests")!, 10) : 0
+    results.failures += s.hasAttribute("failures") ? parseInt(s.getAttribute("failures")!, 10) : 0
+    results.failures += s.hasAttribute("errors") ? parseInt(s.getAttribute("errors")!, 10) : 0
+    results.skipped += s.hasAttribute("skipped") ? parseInt(s.getAttribute("skipped")!, 10) : gatherSkipped(s)
   })
 
   if (results.failures !== 0) {
@@ -175,7 +175,7 @@ Nice one! All ${results.count - results.skipped} tests are passing.`
   }
 }
 
-async function gatherSuites(reportPath: string): Promise<Element[]> {
+async function gatherSuites(reportPath: string): Promise<globalThis.Element[]> {
   const exists = await fs.pathExists(reportPath)
   if (!exists) {
     return []
@@ -183,20 +183,20 @@ async function gatherSuites(reportPath: string): Promise<Element[]> {
   const contents = await fs.readFile(reportPath, "utf8")
   const doc = new DOMParser().parseFromString(contents, "text/xml")
   const suiteRoot =
-    doc.documentElement.firstChild.tagName === "testsuites" ? doc.documentElement.firstChild : doc.documentElement
-  return suiteRoot.tagName === "testsuite" ? [suiteRoot] : Array.from(suiteRoot.getElementsByTagName("testsuite"))
+    doc.documentElement.firstChild?.nodeName === "testsuites" ? doc.documentElement.firstElementChild : doc.documentElement
+  return suiteRoot?.nodeName === "testsuite" ? [suiteRoot] : Array.from(suiteRoot?.getElementsByTagName("testsuite") || [])
 }
 
 // Report test failures
-function gatherFailedTestcases(suites: Element[]): Element[] {
+function gatherFailedTestcases(suites: globalThis.Element[]): globalThis.Element[] {
   // We need to get the 'testcase' elements that have an 'error' or 'failure' child node
   const failedSuites = suites.filter(suite => {
-    const hasFailures = suite.hasAttribute("failures") && parseInt(suite.getAttribute("failures"), 10) !== 0
-    const hasErrors = suite.hasAttribute("errors") && parseInt(suite.getAttribute("errors"), 10) !== 0
+    const hasFailures = suite.hasAttribute("failures") && parseInt(suite.getAttribute("failures")!, 10) !== 0
+    const hasErrors = suite.hasAttribute("errors") && parseInt(suite.getAttribute("errors")!, 10) !== 0
     return hasFailures || hasErrors
   })
   // Gather all the testcase nodes from each failed suite properly.
-  let failedSuitesAllTests: Element[] = []
+  let failedSuitesAllTests: globalThis.Element[] = []
   failedSuites.forEach(suite => {
     failedSuitesAllTests = failedSuitesAllTests.concat(Array.from(suite.getElementsByTagName("testcase")))
   })
@@ -208,8 +208,8 @@ function gatherFailedTestcases(suites: Element[]): Element[] {
   })
 }
 
-function gatherSkipped(suite: Element): number {
-  const testcases: Element[] = Array.from(suite.getElementsByTagName("testcase"))
+function gatherSkipped(suite: globalThis.Element): number {
+  const testcases: globalThis.Element[] = Array.from(suite.getElementsByTagName("testcase"))
   return testcases.filter(test => {
     return test.hasChildNodes() && test.getElementsByTagName("skipped").length > 0
   }).length
